@@ -9,7 +9,7 @@
  */
 class SplashScene extends Phaser.scene {
   /**
-   *this method is ht econstructor
+   *this method is the constructor
    */
   constructor() {
     super({ key: "splashScene" });
@@ -42,7 +42,7 @@ class SplashScene extends Phaser.scene {
   create(data) {}
 
   /**
-   *Should be overriden by your own scenes
+   *Should be overridden by your own scenes
    *this method is called once per game step while the scene is running
    * @param {number} time - the current time
    * @param {number} delta - The delta time in ms since the last frame
