@@ -5,15 +5,15 @@
 //this is the Phaser3 game configuration file
 
 /**
- *This class is the Splash scene
+ *This class is the Title scene
  */
-class SplashScene extends Phaser.Scene {
+class TitleScene extends Phaser.Scene {
   
   /**
    *this method is the constructor
    */
   constructor() {
-    super({ key: "splashScene" });
+    super({ key: "titlescene" });
   }
 
   /**
@@ -32,7 +32,7 @@ class SplashScene extends Phaser.Scene {
    *Use it to load assets
    */
   preload() {
-    console.log("Splash Scene");
+    console.log("Title Scene");
   }
 
   /**
@@ -48,9 +48,7 @@ class SplashScene extends Phaser.Scene {
    * @param {number} time - the current time
    * @param {number} delta - The delta time in ms since the last frame
    */
-  update(time, delta) {
-    this.scene.switch('titleScene')
-  }
+  update(time, delta) {}
 }
 
-export default SplashScene;
+export default TitleScene;
