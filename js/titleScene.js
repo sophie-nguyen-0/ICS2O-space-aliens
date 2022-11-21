@@ -12,7 +12,7 @@ class TitleScene extends Phaser.Scene {
    *this method is the constructor
    */
   constructor() {
-    super({ key: "titlescene" });
+    super({ key: "titleScene" });
   }
 
   /**
