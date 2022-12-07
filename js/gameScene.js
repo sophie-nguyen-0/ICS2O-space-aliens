@@ -2,7 +2,7 @@
 
 //created by sophie
 //created on nov 2022
-//this is the Phaser3 game configuration file
+//this is the Phaser3 game configuration filekl
 
 /**
  *This class is the Game scene
