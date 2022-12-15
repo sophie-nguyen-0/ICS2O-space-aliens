@@ -8,18 +8,17 @@
  *This class is the Game scene
  */
 class GameScene extends Phaser.Scene {
-
   //create an Alien
   createAlien() {
-    const alienXLocation = Math.floor(Math.random() * 1920) + 1
-    let alienXVelocity = Math.floor(Math.random() * 50) + 1
-    alienXVelocity = Math.round(Math.random()) ? 1 : - 1
-    const anAlien = this.physics.add.sprite(alienXLocation, -100, 'alien')
-    anAlien.body.velocity.y = 200
-    anAlien.body.velocity.x = alienXVelocity
-    this.alienGroup.add(anAlien)
+    const alienXLocation = Math.floor(Math.random() * 1920) + 1;
+    let alienXVelocity = Math.floor(Math.random() * 50) + 1;
+    alienXVelocity = Math.round(Math.random()) ? 1 : -1;
+    const anAlien = this.physics.add.sprite(alienXLocation, -100, "alien");
+    anAlien.body.velocity.y = 200;
+    anAlien.body.velocity.x = alienXVelocity;
+    this.alienGroup.add(anAlien);
   }
-  
+
   /**
    *this method is the constructor
    */
@@ -53,10 +52,10 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "assets/starBackground.png");
     this.load.image("ship", "assets/spaceShip.png");
     this.load.image("missile", "assets/missile.png");
-    this.load.image('alien', 'assets/alien.png')
+    this.load.image("alien", "assets/alien.png");
     //sound
     this.load.audio("laser", "assets/laser1.wav");
-    this.load.audio('explosion', 'assets/barrelExploding.wav')
+    this.load.audio("explosion", "assets/barrelExploding.wav");
   }
 
   /**
@@ -75,17 +74,19 @@ class GameScene extends Phaser.Scene {
 
     //create a group for the aliens
     this.alienGroup = this.add.group();
-    this.createAlien()
+    this.createAlien();
 
     //collision between missiles and aliens
-    this.physics.add.collider(this.missileGroup, this.alienGroup, function(missileCollide, alienCollide){
-      alienCollide.destroy()
-      missileCollide.destroy()
-      this.sound.play('explosion')
-      this.createAlien(
-      this.createAlien()
-      )
-    }.bind(this))
+    this.physics.add.collider(
+      this.missileGroup,
+      this.alienGroup,
+      function (missileCollide, alienCollide) {
+        alienCollide.destroy();
+        missileCollide.destroy();
+        this.sound.play("explosion");
+        this.createAlien(this.createAlien());
+      }.bind(this)
+    );
   }
 
   /**
